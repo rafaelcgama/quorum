@@ -214,7 +214,7 @@ def test_main_runs_end_to_end(tmp_path, monkeypatch):
     # Write minimal input CSVs
     pd.DataFrame([{"id": 10, "title": "Bill A", "sponsor_id": None}]).to_csv("data/bills.csv", index=False)
     pd.DataFrame([{"id": 1, "name": "Biden"}]).to_csv("data/legislators.csv", index=False)
-    pd.DataFrame([{"vote_id": 100, "legislator_id": 1, "vote_type": 1}]).to_csv("data/vote_results.csv", index=False)
+    pd.DataFrame([{"id": 1, "legislator_id": 1, "vote_id": 100, "vote_type": 1}]).to_csv("data/vote_results.csv", index=False)
     pd.DataFrame([{"id": 100, "bill_id": 10}]).to_csv("data/votes.csv", index=False)
 
     main()  # now everything runs
